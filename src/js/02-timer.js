@@ -51,7 +51,7 @@ function startTimer() {
     let nowUTC = new Date().getTime();
 
     getTimerValue(nowUTC);
-
+    console.log(getTimerValue(nowUTC));
     let SumDateValue = days + hours + minutes + seconds;
 
     if (SumDateValue === 0) {
@@ -71,7 +71,7 @@ function padStart(num) {
 
 function getTimerValue(now) {
   let timerValue = convertMs(selectedDatesUTC - now);
-
+  console.log(timerValue);
   return ({ days, hours, minutes, seconds } = timerValue);
 }
 
