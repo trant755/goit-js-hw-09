@@ -58,16 +58,16 @@ function startTimer() {
       clearInterval(intervalId);
     }
 
-    refs.dayInterface.textContent = padStart(days);
-    refs.hoursInterface.textContent = padStart(hours);
-    refs.minsInterface.textContent = padStart(minutes);
-    refs.secInterface.textContent = padStart(seconds);
+    refs.dayInterface.textContent = days;
+    refs.hoursInterface.textContent = hours;
+    refs.minsInterface.textContent = minutes;
+    refs.secInterface.textContent = seconds;
   }, 1000);
 }
 
-function padStart(num) {
-  return String(num).padStart(2, 0);
-}
+// function padStart(num) {
+//   return String(num).padStart(2, 0);
+// }
 
 function getTimerValue(now) {
   let timerValue = convertMs(selectedDatesUTC - now);
