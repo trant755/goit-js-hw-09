@@ -49,7 +49,8 @@ function startTimer() {
   intervalId = setInterval(() => {
     let nowUTC = new Date().getTime();
 
-    getTimerValue(nowUTC);
+    let timerValue = convertMs(selectedDatesUTC - nowUTC);
+    const { days, hours, minutes, seconds } = timerValue;
 
     let SumDateValue = days + hours + minutes + seconds;
 
@@ -57,20 +58,15 @@ function startTimer() {
       clearInterval(intervalId);
     }
 
-    refs.dayInterface.textContent = days;
-    refs.hoursInterface.textContent = hours;
-    refs.minsInterface.textContent = minutes;
-    refs.secInterface.textContent = seconds;
+    refs.dayInterface.textContent = pad(days);
+    refs.hoursInterface.textContent = pad(hours);
+    refs.minsInterface.textContent = pad(minutes);
+    refs.secInterface.textContent = pad(seconds);
   }, 1000);
 }
 
-// function padStart(num) {
-//   return String(num).padStart(2, 0);
-// }
-
-function getTimerValue(now) {
-  let timerValue = convertMs(selectedDatesUTC - now);
-  return ({ days, hours, minutes, seconds } = timerValue);
+function pad(num) {
+  return String(num).padStart(2, 0);
 }
 
 function convertMs(ms) {
