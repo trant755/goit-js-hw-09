@@ -32,7 +32,6 @@ flatpickr('#datetime-picker', {
 
 function dateValidation(date) {
   if (date <= today) {
-    // alert('Please choose a date in the future');
     Notify.warning('Please choose a date in the future', {
       timeout: 3000,
     });

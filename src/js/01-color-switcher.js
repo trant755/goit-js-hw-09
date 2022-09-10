@@ -7,8 +7,6 @@ let intervalId = null;
 refs.startBtn.addEventListener('click', startChangeBg);
 refs.stopBtn.addEventListener('click', stopChangeBg);
 
-console.log(refs.startBtn);
-
 function startChangeBg() {
   intervalId = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
