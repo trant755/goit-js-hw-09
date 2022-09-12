@@ -5,6 +5,7 @@ Notify.init({ position: 'center-top' });
 
 const refs = {
   startBtn: document.querySelector('[data-start]'),
+  input: document.querySelector('#datetime-picker'),
   dayInterface: document.querySelector('[data-days]'),
   hoursInterface: document.querySelector('[data-hours]'),
   minsInterface: document.querySelector('[data-minutes]'),
@@ -45,6 +46,7 @@ function dateValidation(date) {
 
 function startTimer() {
   refs.startBtn.disabled = true;
+  refs.input.disabled = true;
 
   intervalId = setInterval(() => {
     let nowUTC = new Date().getTime();
